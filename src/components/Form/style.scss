@@ -1,0 +1,127 @@
+@import "../../utilities/variables.scss";
+
+.form {
+    background: $bgColor;
+    width: 332px;
+    height: 440px;
+    padding: 24px;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+    border-radius: 4px;
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        input {
+            width: 284px;
+            height: 36px;
+            background: $bgColor;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            padding-left: 16px;
+            margin-bottom: 16px;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            color: $mainFontColor;
+            &::placeholder {
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 15px;
+                color: #B4B4B4;
+            }
+        }
+        textarea {
+            width: 284px;
+            height: 125px;
+            resize: none;
+            padding: 10px 16px;
+            background: $bgColor;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border: none;
+            outline: none;
+            font-size: 12px;
+            line-height: 15px;
+            color: $mainFontColor;
+            margin-bottom: 16px;
+            &::placeholder {
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 15px;
+                color: #B4B4B4;
+            }
+        }
+        label {
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 13px;
+            letter-spacing: -0.02em;
+            color: $formFontColor;
+            position: relative;
+            padding-bottom: 4px;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                right: -4px;
+                top: 0;
+                background: #FF8484;
+                border-radius: 4px;
+            }
+            // cancels label desciption content 
+            &:nth-child(3) {
+                &::after {
+                    content: none;
+                }
+            }
+        }
+        button {
+            width: 284px;
+            height: 36px;
+            border: none;
+            background: #7BAE73;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            color: #FFFFFF;
+            &:disabled {
+                background: #EEEEEE;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                text-align: center;
+                letter-spacing: -0.02em;
+                color: #B4B4B4;
+            }
+        }
+    }
+}
+
+.form__invalidWrapper {
+    position: relative;
+    &::after {
+        content: 'Поле является обязательным';
+        width: 100px;
+        height: 10px;
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        font-weight: normal;
+        font-size: 8px;
+        line-height: 10px;
+        letter-spacing: -0.02em;
+        color: #FF8484;
+    }
+}
+
+.form__invalidInput {
+    border: 1px solid #FF8484 !important;
+}
+
