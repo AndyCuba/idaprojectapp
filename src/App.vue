@@ -25,5 +25,7 @@ body {
   font-family: Source Sans Pro;
   font-style: normal;
   background-color: rgba($color: $bgColor, $alpha: 0.8);
+  max-width: 1440px;
+  margin: auto;
 }
 </style>

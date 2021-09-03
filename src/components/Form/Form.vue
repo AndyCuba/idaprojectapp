@@ -89,6 +89,7 @@ export default defineComponent({
         description: this.description,
         url: this.url,
         price: this.price,
+        id: new Date().valueOf().toString(),
       };
       store.commit("addNewProduct", newProduct);
     },

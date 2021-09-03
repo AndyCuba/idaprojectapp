@@ -2,6 +2,7 @@
 
 .form {
     background: $bgColor;
+    margin-right: 16px;
     width: 332px;
     height: 440px;
     padding: 24px;
@@ -91,6 +92,9 @@
             font-size: 12px;
             line-height: 15px;
             color: #FFFFFF;
+            &:active {
+                transform: scale(0.95);
+            }
             &:disabled {
                 background: #EEEEEE;
                 font-weight: 600;
