@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Sorting />
     <div>
       <h1>Добавление товара</h1>
       <Form />
@@ -18,6 +19,7 @@
 import { defineComponent } from "vue";
 import Form from "@/components/Form/Form.vue";
 import Product from "@/components/Product/Product.vue";
+import Sorting from "@/components/Sorting/Sorting.vue";
 import store from "@/store";
 
 export default defineComponent({
@@ -25,6 +27,7 @@ export default defineComponent({
   components: {
     Form,
     Product,
+    Sorting,
   },
   computed: {
     getAllProducts() {
@@ -40,6 +43,7 @@ export default defineComponent({
 .home {
   padding: 32px;
   display: flex;
+  position: relative;
 }
 
 .home__content {
