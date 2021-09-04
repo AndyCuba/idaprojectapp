@@ -28,4 +28,21 @@ body {
   max-width: 1440px;
   margin: auto;
 }
+@media (max-width: 1439px) {
+  body {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1026px) {
+  body {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 740px) {
+  body {
+    max-width: 320px;
+  }
+}
 </style>

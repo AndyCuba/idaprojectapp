@@ -57,24 +57,6 @@ export default createStore<Store>({
         price: "400000",
         id: "4",
       },
-      {
-        name: "Golden Hind",
-        description:
-          "The Manila galleons sailed the Pacific for 250 years, bringing to the Americas cargoes of luxury goods such as spices and porcelain in exchange for New World silver.",
-        imageUrl:
-          "https://www.herbkanehawaii.com/wp-content/uploads/2020/02/Herb-Kane_Manila-Galleon-off-Puna-Coast.jpg",
-        price: "100000",
-        id: "5",
-      },
-      {
-        name: "Golden Hind",
-        description:
-          "The Manila galleons sailed the Pacific for 250 years, bringing to the Americas cargoes of luxury goods such as spices and porcelain in exchange for New World silver.",
-        imageUrl:
-          "https://www.herbkanehawaii.com/wp-content/uploads/2020/02/Herb-Kane_Manila-Galleon-off-Puna-Coast.jpg",
-        price: "100000",
-        id: "6",
-      },
     ],
     sorting: "По умолчанию",
   },

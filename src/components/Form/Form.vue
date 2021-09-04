@@ -1,5 +1,8 @@
 <template>
   <div class="form">
+    <div class="form__alert" :class="{ alert__displayed: isAlertDisplayed }">
+      Товар успешно добавлен!
+    </div>
     <form v-on:submit.prevent="handleSubmit">
       <label for="name">Наименование товара</label>
       <div :class="{ form__invalidWrapper: errors.name }">
@@ -67,6 +70,7 @@ interface FormData {
   url: string;
   price: string;
   errors: FormErrors;
+  isAlertDisplayed: boolean;
 }
 
 export default defineComponent({
@@ -76,6 +80,7 @@ export default defineComponent({
     description: "",
     url: "",
     price: "",
+    isAlertDisplayed: false,
     errors: {
       name: false,
       url: false,
@@ -84,6 +89,7 @@ export default defineComponent({
   }),
   methods: {
     handleSubmit() {
+      //create new Product from input data
       const newProduct = {
         name: this.name,
         description: this.description,
@@ -92,6 +98,11 @@ export default defineComponent({
         id: new Date().valueOf().toString(),
       };
       store.commit("addNewProduct", newProduct);
+      // displays success alert
+      this.isAlertDisplayed = true;
+      setTimeout(() => {
+        this.isAlertDisplayed = false;
+      }, 2000);
     },
     // If inputs prop is empty, adds error in data object after loss of focus
     handleInputBlur(prop: keyof FormData) {

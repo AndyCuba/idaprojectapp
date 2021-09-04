@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Sorting />
-    <div>
+    <div class="home__form">
       <h1>Добавление товара</h1>
       <Form />
     </div>
@@ -49,6 +49,7 @@ export default defineComponent({
 .home__content {
   padding-top: 48px;
   max-width: 1028px;
+  min-width: 320px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(332px, 332px));
   grid-gap: 16px;
@@ -59,5 +60,22 @@ h1 {
   font-size: 28px;
   color: $mainFontColor;
   padding-bottom: 16px;
+}
+
+@media (max-width: 740px) {
+  .home {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .home__form {
+    width: 320px;
+  }
+}
+
+@media (max-width: 400px) {
+  .home {
+    padding: 0;
+  }
+  
 }
 </style>
