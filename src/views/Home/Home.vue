@@ -76,6 +76,5 @@ h1 {
   .home {
     padding: 0;
   }
-  
 }
 </style>

@@ -7,7 +7,9 @@
     <div class="product__content">
       <h2>{{ name }}</h2>
       <p v-if="description">{{ description }}</p>
-      <p class="product__price">{{ price }} руб</p>
+      <p class="product__price">
+        {{ price.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }} руб
+      </p>
     </div>
   </div>
 </template>

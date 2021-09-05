@@ -37,10 +37,11 @@
       <label for="price">Цена товара</label>
       <div :class="{ form__invalidWrapper: errors.price }">
         <input
-          type="number"
+          type="text"
           v-model="price"
           v-on:blur="handleInputBlur('price')"
           v-on:focus="handleInputFocus('price')"
+          v-on:input="handleInputChange"
           :class="{ form__invalidInput: errors.price }"
           placeholder="Введите цену"
           id="price"
@@ -94,7 +95,7 @@ export default defineComponent({
         name: this.name,
         description: this.description,
         url: this.url,
-        price: this.price,
+        price: this.price.split(" ").join(""),
         id: new Date().valueOf().toString(),
       };
       store.commit("addNewProduct", newProduct);
@@ -114,6 +115,14 @@ export default defineComponent({
     // Deletes input's error after focus
     handleInputFocus(prop: keyof FormErrors) {
       this.errors[prop] = false;
+    },
+    handleInputChange(e: Event) {
+      const target = e.target as HTMLInputElement;
+
+      target.value = target.value
+        .replace(/[^0-9.]/g, "")
+        .replace(/(\..*)\./g, "$1")
+        .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     },
   },
   computed: {

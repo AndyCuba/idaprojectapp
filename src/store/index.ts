@@ -4,6 +4,7 @@ import {
   sortByName,
 } from "@/helpers/helpers";
 import { createStore } from "vuex";
+import createPersistedState from "vuex-persistedstate";
 
 export interface ProductTypes {
   id: string;
@@ -19,6 +20,7 @@ interface Store {
 }
 
 export default createStore<Store>({
+  plugins: [createPersistedState()],
   state: {
     products: [
       {
@@ -35,7 +37,7 @@ export default createStore<Store>({
         description:
           "The Manila galleons sailed the Pacific for 250 years, bringing to the Americas cargoes of luxury goods such as spices and porcelain in exchange for New World silver.",
         imageUrl:
-          "https://www.herbkanehawaii.com/wp-content/uploads/2020/02/Herb-Kane_Manila-Galleon-off-Puna-Coast.jpg",
+          "https://www.goldenhinde.co.uk/images/goldenhinde/Blog_Articles_2020/A_Ships_Fate/joelrogers-at-sea.jpg",
         price: "100000",
         id: "2",
       },
@@ -44,7 +46,7 @@ export default createStore<Store>({
         description:
           "The Manila galleons sailed the Pacific for 250 years, bringing to the Americas cargoes of luxury goods such as spices and porcelain in exchange for New World silver.",
         imageUrl:
-          "https://www.herbkanehawaii.com/wp-content/uploads/2020/02/Herb-Kane_Manila-Galleon-off-Puna-Coast.jpg",
+          "https://sdmaritime.org/wp-content/uploads/2018/08/sanSalvadorCatalina1200w.jpg",
         price: "200000",
         id: "3",
       },
@@ -53,7 +55,7 @@ export default createStore<Store>({
         description:
           "The Manila galleons sailed the Pacific for 250 years, bringing to the Americas cargoes of luxury goods such as spices and porcelain in exchange for New World silver.",
         imageUrl:
-          "https://www.herbkanehawaii.com/wp-content/uploads/2020/02/Herb-Kane_Manila-Galleon-off-Puna-Coast.jpg",
+          "https://w0.peakpx.com/wallpaper/476/28/HD-wallpaper-ship-art-fantasy-boat-sea.jpg",
         price: "400000",
         id: "4",
       },
@@ -85,6 +87,9 @@ export default createStore<Store>({
       } else if (sorting === "По убыванию") {
         return [...products].sort(sortByDescending);
       } else return products;
+    },
+    getSorting(state) {
+      return state.sorting;
     },
   },
   actions: {},

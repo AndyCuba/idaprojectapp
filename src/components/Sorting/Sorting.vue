@@ -19,7 +19,7 @@ import "./style.scss";
 export default defineComponent({
   name: "Sorting",
   data: () => ({
-    sorting: "По умолчанию",
+    sorting: store.getters.getSorting,
   }),
   methods: {
     hanldleChange(e: Event) {
