@@ -94,7 +94,7 @@ export default defineComponent({
       const newProduct = {
         name: this.name,
         description: this.description,
-        url: this.url,
+        imageUrl: this.url,
         price: this.price.split(" ").join(""),
         id: new Date().valueOf().toString(),
       };
